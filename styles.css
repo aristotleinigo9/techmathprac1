@@ -1,0 +1,27 @@
+body,html {
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 20px;
+    background-color: white;
+}
+
+#user-info, #quiz, #result {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#quiz, #result {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Math Practice Test 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="user-info">
+        <h2>Technical Math Practice Test 1</h2>
+        <h3>Time: 110 minutes</h3>
+        <h2>Enter Your Information</h2>
+        <form id="info-form">
+            <label for="name">Name: <input type="text" id="name" style="margin-left: 51px;"> </label>
+            <br>
+            <label for="id">Badge: <input type="text" id="id" style="margin-left: 47px;" required></label>
+            <br>
+            <label for="password">Password: <input type="password" id="password" style="margin-left: 20px;" required></label>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" onclick="startQuiz()">Start Test</button>
+        </form>
+    </div>
+
+    <div id="quiz" style="display: none;">
+        <h2>Technical Math Practice Test 1</h2>
+        <div id="user-info-display"></div>
+        <p id="timer">Time left: <span id="countdown"></span></p>
+        <hr>
+        <form id="quiz-form">
+            <h3>Select the best answer.</h3>
+            <p class="warning" style="color: red;">Do not open new tabs or minimize the screen during the test. Test will terminate/freeze and your answers may not be saved. You may also get zero.</p>
+            <div class="question">
+                <p>1. Write the number \({0.0000265}\) in scientific notation.</p>
+                <label><input type="radio" name="q1" value="a"> \({2.65}\times{10^4}\)</label><br>
+                <label><input type="radio" name="q1" value="b"> \({26.5}\times{10^3}\)</label><br>
+                <label><input type="radio" name="q1" value="c"> \({2.65}\times{10^{-4}}\)</label><br>
+                <label><input type="radio" name="q1" value="d"> \({2.65}\times{10^{-5}}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>2. \({79}~{m^2}\) = _______ \(~{cm^2}\)</p>
+                <label><input type="radio" name="q2" value="a"> \({7,900,000}\)</label><br>
+                <label><input type="radio" name="q2" value="b"> \({790,000}\)</label><br>
+                <label><input type="radio" name="q2" value="c"> \({79,000}\)</label><br>
+                <label><input type="radio" name="q2" value="d"> \({790}\)</label>
+            </div><br>
+
+            <!-- Add more questions here -->
+            <div class="question">
+                <p>3. Convert 8 feet, 11 inches to inches. (Note: 1 ft = 12 in)</p>
+                <label><input type="radio" name="q3" value="a"> 107 inches</label><br>
+                <label><input type="radio" name="q3" value="b"> 811 inches</label><br>
+                <label><input type="radio" name="q3" value="c"> 96 inches</label><br>
+                <label><input type="radio" name="q3" value="d"> 140 inches</label>
+            </div><br>
+
+            <div class="question">
+                <p>4. Which of the following is the solution on the given systems of linear equations? <p style='margin-left:5em'> \({5x-y=7}\)</p> <p style='margin-left:5em'> \({y=4x-6}\)</p></p>
+                <label><input type="radio" name="q4" value="a"> \({(1,-2)}\)</label><br>
+                <label><input type="radio" name="q4" value="b"> \({(2,3)}\)</label><br>
+                <label><input type="radio" name="q4" value="c"> \({(3,8)}\)</label><br>
+                <label><input type="radio" name="q4" value="d"> \({(-1,-12)}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>5. What is the volume of a prism with a base area of \({72.3}~{cm^2}\) and a height (altitude) of \({6.50}~{cm}\)?Apply the rules of measurement. </p>
+                <label><input type="radio" name="q5" value="a"> \({469.95}\)</label><br>
+                <label><input type="radio" name="q5" value="b"> \({469}\)</label><br>
+                <label><input type="radio" name="q5" value="c"> \({47}\bar{0}\)</label><br>
+                <label><input type="radio" name="q5" value="d"> \({50}\bar{0}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>6. 4,000 mL = _________ L</p>
+                <label><input type="radio" name="q6" value="a"> 4</label><br>
+                <label><input type="radio" name="q6" value="b"> 40</label><br>
+                <label><input type="radio" name="q6" value="c"> 0.4</label><br>
+                <label><input type="radio" name="q6" value="d"> 0.04</label>
+            </div><br>
+
+            <div class="question">
+                <p>7. Convert \({104}~{^oF}\) to \({^oC}\). Use \({^oC} = {5\over9}({^oF}{-32})\).</p>
+                <label><input type="radio" name="q7" value="a"> \({25}~{^oC}\)</label><br>
+                <label><input type="radio" name="q7" value="b"> \({32}~{^oC}\)</label><br>
+                <label><input type="radio" name="q7" value="c"> \({7}~{^oC}\)</label><br>
+                <label><input type="radio" name="q7" value="d"> \({40}~{^oC}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>8. What is the metric Vernier caliper reading below?</p> <p><img src='images/q8.png' width='400' height='175'></p>
+                <label><input type="radio" name="q8" value="a"> 67.40 mm</label><br>
+                <label><input type="radio" name="q8" value="b"> 61.74 mm</label><br>
+                <label><input type="radio" name="q8" value="c"> 60.72 mm</label><br>
+                <label><input type="radio" name="q8" value="d"> 72.60 mm</label>
+            </div><br>
+
+            <div class="question">
+                <p>8. What is the reading of the metric micrometer below?</p> <p><img src='images/q9.jpg' width='400' height='175'></p>
+                <label><input type="radio" name="q9" value="a"> 5.25 mm</label><br>
+                <label><input type="radio" name="q9" value="b"> 8.25 mm</label><br>
+                <label><input type="radio" name="q9" value="c"> 8.75 mm</label><br>
+                <label><input type="radio" name="q9" value="d"> 12.25 mm</label>
+            </div><br>
+
+            <div class="question">
+                <p>10. Use the rules for subtraction to subtract \({5.236}~{m}\) from \({18.6}~{m}\).</p>
+                <label><input type="radio" name="q10" value="a"> \({13.364}~{m}\)</label><br>
+                <label><input type="radio" name="q10" value="b"> \({13.36}~{m}\)</label><br>
+                <label><input type="radio" name="q10" value="c"> \({13.4}~{m}\)</label><br>
+                <label><input type="radio" name="q10" value="d"> \({13.0}~{m}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>11. Solve the equation: \({2(x-5)=6}\).</p>
+                <label><input type="radio" name="q11" value="a"> \(x= -8\)</label><br>
+                <label><input type="radio" name="q11" value="b"> \(x= 8\)</label><br>
+                <label><input type="radio" name="q11" value="c"> \(x= 11\)</label><br>
+                <label><input type="radio" name="q11" value="d"> \(x= -11\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>12. Solve for \(y\) in terms of \(x\).</p>
+                <p style='margin-left:5em'>\(3x-4y=12\)</p>
+                <label><input type="radio" name="q12" value="a"> \(y=3x+12\)</label><br>
+                <label><input type="radio" name="q12" value="b"> \(y=4x-9\)</label><br>
+                <label><input type="radio" name="q12" value="c">  \({y=}{3\over4}x-3\)</label><br>
+                <label><input type="radio" name="q12" value="d"> \({y=}{-3\over4} x+3\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>13. A large gear (A) with 60 teeth turning at 200 rpm turns a small gear (B) with 50 teeth. At how many rpm does the small gear turn?</p>
+                <p style='margin-left:5em'><img src='images/q13.jpg' width='130' height='175'></p>
+                <label><input type="radio" name="q13" value="a"> 100</label><br>
+                <label><input type="radio" name="q13" value="b"> 120</label><br>
+                <label><input type="radio" name="q13" value="c"> 400</label><br>
+                <label><input type="radio" name="q13" value="d"> 240</label>
+            </div><br>
+
+            <div class="question">
+                <p>14. Given that \({sin}~{A} = 0.4567\), what is the degree measure of angle \(A\) to the nearest tenth?</p>
+                <label><input type="radio" name="q14" value="a"> \({27.2}^0\)</label><br>
+                <label><input type="radio" name="q14" value="b"> \({31.4}^0\)</label><br>
+                <label><input type="radio" name="q14" value="c"> \({45.7}^0\)</label><br>
+                <label><input type="radio" name="q14" value="d"> \({56.7}^0\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>15. Find the median of the following set of measurements: </p>
+                <p style='margin-left:5em'>45 mm, 64 mm, 18 mm, 45 mm, 43 mm, 75 mm</p>
+                <label><input type="radio" name="q15" value="a"> 30 mm</label><br>
+                <label><input type="radio" name="q15" value="b"> 45 mm</label><br>
+                <label><input type="radio" name="q15" value="c"> 64 mm</label><br>
+                <label><input type="radio" name="q15" value="d"> 57 mm</label>
+            </div><br>
+
+            <div class="question">
+                <p>16. Given that \({sin}~{A} = 0.2356\), find the measure of angle \(A\) to the nearest tenth of a degree.</p>
+                <label><input type="radio" name="q16" value="a"> \({13.6}^0\)</label><br>
+                <label><input type="radio" name="q16" value="b"> \({15.5}^0\)</label><br>
+                <label><input type="radio" name="q16" value="c"> \({48.2}^0\)</label><br>
+                <label><input type="radio" name="q16" value="d"> \({76.4}^0\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>17. Find the hypotenuse of the right triangle below.</p>
+                <p style='margin-left:5em'><img src='images/q17.png' width='123' height='90'></p>
+                <label><input type="radio" name="q17" value="a"> 2.90 cm</label><br>
+                <label><input type="radio" name="q17" value="b"> 31.9 cm</label><br>
+                <label><input type="radio" name="q17" value="c"> 9.62 cm</label><br>
+                <label><input type="radio" name="q17" value="d"> 22.6 cm</label>
+            </div><br>
+
+
+            <div class="question">
+                <p>18. Find the area of the triangle shown below. Apply the rules of measurements.</p>
+                <p style='margin-left:5em'><img src='images/q18.png' width='123' height='90'></p>
+                <label><input type="radio" name="q18" value="a"> \({51.23}~{cm^2}\)</label><br>
+                <label><input type="radio" name="q18" value="b"> \({25.62}~{cm^2}\)</label><br>
+                <label><input type="radio" name="q18" value="c"> \({25.6}~{cm^2}\)</label><br>
+                <label><input type="radio" name="q18" value="d"> \({51.2}~{cm^2}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>19. The rise to run ratio of a sloped plane is 3:8. What is the rise if the run is 20 to the nearest tenth? </p>
+                <label><input type="radio" name="q19" value="a"> 7.5</label><br>
+                <label><input type="radio" name="q19" value="b"> 7.0</label><br>
+                <label><input type="radio" name="q19" value="c"> 3.8</label><br>
+                <label><input type="radio" name="q19" value="d"> 3.7</label>
+            </div><br>
+
+            <div class="question">
+                <p>20. Find the measure of angle B below to the nearest tenth of a degree.</p>
+                <p style='margin-left:5em'><img src='images/q20.png' width='200' height='120'></p>
+                <label><input type="radio" name="q20" value="a"> \({34.8}^0\)</label><br>
+                <label><input type="radio" name="q20" value="b"> \({55.2}^0\)</label><br>
+                <label><input type="radio" name="q20" value="c"> \({39.4}^0\)</label><br>
+                <label><input type="radio" name="q20" value="d"> \({38.2}^0\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>21. Two sides of the two rectangles are proportional. The width and length of the large rectangle are 4.3 in and 7.6 in, respectively. If the width of the small rectangle is 3.4 in, how long is its length? </p>
+                <label><input type="radio" name="q21" value="a"> 6.7 in</label><br>
+                <label><input type="radio" name="q21" value="b"> 6.4 in</label><br>
+                <label><input type="radio" name="q21" value="c"> 6.0 in</label><br>
+                <label><input type="radio" name="q21" value="d"> 5.7 in</label>
+            </div><br>
+
+            <div class="question">
+                <p>22. Find the value of \({sin}~{58^o}\) to four decimal places.</p>
+                <label><input type="radio" name="q22" value="a"> 0.5150</label><br>
+                <label><input type="radio" name="q22" value="b"> 1.6643</label><br>
+                <label><input type="radio" name="q22" value="c"> 0.9652</label><br>
+                <label><input type="radio" name="q22" value="d"> 0.8480</label>
+            </div><br>
+
+            <div class="question">
+                <p>23. The sum of two voltages in 156 V and the difference between them is 28 V. Find the two voltages.</p>
+                <label><input type="radio" name="q23" value="a"> 92 V and 64 V</label><br>
+                <label><input type="radio" name="q23" value="b"> 98 V and 58 V</label><br>
+                <label><input type="radio" name="q23" value="c"> 86 V and 70 V </label><br>
+                <label><input type="radio" name="q23" value="d"> 82 V and 74 V</label>
+            </div><br>
+
+            <div class="question">
+                <p>24. Find the area of the trapezoid shown below.Apply rules of measurement.</p>
+                <p style='margin-left:5em'><img src='images/q24.png' width='200' height='120'></p>
+                <label><input type="radio" name="q24" value="a"> \({93.49}~{cm^2}\)</label><br>
+                <label><input type="radio" name="q24" value="b"> \({93.5}~{cm^2}\)</label><br>
+                <label><input type="radio" name="q24" value="c"> \({93.39}~{cm^2}\)</label><br>
+                <label><input type="radio" name="q24" value="d"> \({93.4}~{cm^2}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>25. What is the mean of the following set of measurements?</p>
+                <p style='margin-left:5em'>46 kg, 54 kg, 31 kg, 68 kg, 46 kg, 83 kg, 22 kg</p>
+                <label><input type="radio" name="q25" value="a"> 46 kg</label><br>
+                <label><input type="radio" name="q25" value="b"> 49.5 kg</label><br>
+                <label><input type="radio" name="q25" value="c"> 50 kg</label><br>
+                <label><input type="radio" name="q25" value="d"> 45.5 kg</label>
+            </div><br>
+
+            <div class="question">
+                <p>26. A flywheel has 85 teeth, and a starter drive-gear has 40 teeth. Find the ratio of flywheel teeth to drive-gear teeth.</p>
+                <label><input type="radio" name="q26" value="a"> \({17\over16}\)</label><br>
+                <label><input type="radio" name="q26" value="b"> \({17\over8}\)</label><br>
+                <label><input type="radio" name="q26" value="c"> \({16\over17}\)</label><br>
+                <label><input type="radio" name="q26" value="d"> \({8\over17}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>27. Solve the equation: \(3a + 5 = 2a + 11\)</p>
+                <label><input type="radio" name="q27" value="a"> 6</label><br>
+                <label><input type="radio" name="q27" value="b"> 12</label><br>
+                <label><input type="radio" name="q27" value="c"> 8</label><br>
+                <label><input type="radio" name="q27" value="d"> 16</label>
+            </div><br>
+
+            <div class="question">
+                <p>28. Which of the following points is a solution of the equation \(2x+9y= 5\)?</p>
+                <label><input type="radio" name="q28" value="a"> (1,2)</label><br>
+                <label><input type="radio" name="q28" value="b"> (7,1)</label><br>
+                <label><input type="radio" name="q28" value="c"> (-1,7)</label><br>
+                <label><input type="radio" name="q28" value="d"> (-2,1)</label>
+            </div><br>
+
+            <div class="question">
+                <p>29. Which of the following is true about the right triangle below?</p>
+                <p style='margin-left:5em'><img src='images/q29.png' width='200' height='120'></p>
+                <label><input type="radio" name="q29" value="a"> \({tan}~{A}={a\over c}\)</label><br>
+                <label><input type="radio" name="q29" value="b"> \({cos}~{B}={b\over a}\)</label><br>
+                <label><input type="radio" name="q29" value="c"> \({sin}~{B}={b\over c}\)</label><br>
+                <label><input type="radio" name="q29" value="d"> \({cos}~{A}={a\over b}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>30. Using the formula \(V=πr^2h\), find the volume of the cylinder shown below where \({r=5.60}~m\) and \(h= 12.0~m\). Use \(π=3.14\) and apply rules of measurements.</p>
+                <p style='margin-left:5em'><img src='images/q30.png' width='110' height='150'></p>
+                <label><input type="radio" name="q30" value="a"> \({1,181.6448}~{m^3}\)</label><br>
+                <label><input type="radio" name="q30" value="b"> \({1,191.6448}~{m^3}\)</label><br>
+                <label><input type="radio" name="q30" value="c"> \({1,180}~{m^3}\)</label><br>
+                <label><input type="radio" name="q30" value="d"> \({1,190}~{m^3}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>31. Find the total surface area (TSA) of the prism below.</p>
+                <p style='margin-left:2em'>Use the formula: \(TSA =2LW+(2L+2W)H\).</p>
+                <p style='margin-left:5em'><img src='images/q31.png' width='250' height='150'></p>
+                <label><input type="radio" name="q31" value="a"> \({102}~{m^2}\)</label><br>
+                <label><input type="radio" name="q31" value="b"> \({405}~{m^2}\)</label><br>
+                <label><input type="radio" name="q31" value="c"> \({120}~{m^2}\)</label><br>
+                <label><input type="radio" name="q31" value="d"> \({450}~{m^2}\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>32. Convert 36 inches (in) to centimeters (cm). (Note: 1 in = 2.54 cm)</p>
+                <label><input type="radio" name="q32" value="a"> 25.4 cm</label><br>
+                <label><input type="radio" name="q32" value="b"> 72.2 cm</label><br>
+                <label><input type="radio" name="q32" value="c"> 84.7 cm</label><br>
+                <label><input type="radio" name="q32" value="d"> 91.4 cm</label>
+            </div><br>
+
+            <div class="question">
+                <p>33. Solve the proportion: \({2x\over9} = {24\over15}\)</p>
+                <label><input type="radio" name="q33" value="a"> 7.2</label><br>
+                <label><input type="radio" name="q33" value="b"> 4.1</label><br>
+                <label><input type="radio" name="q33" value="c"> 2.7</label><br>
+                <label><input type="radio" name="q33" value="d"> 1.4</label>
+            </div><br>
+
+            <div class="question">
+                <p>34. What is the reading on this metric ruler?</p>
+                <p style='margin-left:5em'><img src='images/q34.png' width='250' height='100'></p>
+                <label><input type="radio" name="q34" value="a"> 3.6 mm</label><br>
+                <label><input type="radio" name="q34" value="b"> 36 mm</label><br>
+                <label><input type="radio" name="q34" value="c"> 3.6 m</label><br>
+                <label><input type="radio" name="q34" value="d"> 36 m</label>
+            </div><br>
+
+            <div class="question">
+                <p>35. A 20 ft by 15 ft rectangular room was carpeted and the price of the carpet is 8.00 SAR per square foot. How much was spent?</p>
+                <label><input type="radio" name="q35" value="a"> 43 SAR</label><br>
+                <label><input type="radio" name="q35" value="b"> 300 SAR</label><br>
+                <label><input type="radio" name="q35" value="c"> 2,400 SAR</label><br>
+                <label><input type="radio" name="q35" value="d"> 2,800 SAR</label>
+            </div><br>
+
+            <div class="question">
+                <p>36. Given the equation \({Q=WC(T_1-T_2)} \), solve for \(T_1\).</p>
+                <label><input type="radio" name="q36" value="a"> \(T_1={Q\over WC}-T_2\)</label><br>
+                <label><input type="radio" name="q36" value="b"> \(T_1={WC\over Q}-T_2\)</label><br>
+                <label><input type="radio" name="q36" value="c"> \(T_1={T_2\over WC}+Q\)</label><br>
+                <label><input type="radio" name="q36" value="d"> \(T_1={Q\over WC}+T_2\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>37. Find the LCD. \({3\over 18}+{5\over 14}+{1\over 21}\)</p>
+                <label><input type="radio" name="q37" value="a"> 42</label><br>
+                <label><input type="radio" name="q37" value="b"> 84</label><br>
+                <label><input type="radio" name="q37" value="c"> 126</label><br>
+                <label><input type="radio" name="q37" value="d"> 252</label>
+            </div><br>
+
+            <div class="question">
+                <p>38. What is the radius of the circle whose area is 128 \(cm^2\)? (Use π= 3.14)</p>
+                <label><input type="radio" name="q38" value="a"> 6.38 cm</label><br>
+                <label><input type="radio" name="q38" value="b"> 9.62 cm</label><br>
+                <label><input type="radio" name="q38" value="c"> 10.2 cm</label><br>
+                <label><input type="radio" name="q38" value="d"> 20.4 cm</label>
+            </div><br>
+
+            <div class="question">
+                <p>39. What is the circumference of a circle if its diameter is 13.6 cm?</p>
+                <label><input type="radio" name="q39" value="a"> 18.5 cm</label><br>
+                <label><input type="radio" name="q39" value="b"> 26.7 cm</label><br>
+                <label><input type="radio" name="q39" value="c"> 42.7 cm</label><br>
+                <label><input type="radio" name="q39" value="d"> 37.1 cm</label>
+            </div><br>
+
+            <div class="question">
+                <p>40. The circle graph below shows the percentage production of oil in the four regions in one day.What central angle of a circle would show the percent of oil production in the "South" region. Round your answer to the nearest whole degree if needed.</p>
+                <p style='margin-left:5em'><img src='images/q40.png' width='250' height='250'></p>
+                <label><input type="radio" name="q40" value="a"> \(90^o\)</label><br>
+                <label><input type="radio" name="q40" value="b"> \(54^o\)</label><br>
+                <label><input type="radio" name="q40" value="c"> \(36^o\)</label><br>
+                <label><input type="radio" name="q40" value="d"> \(29^o\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>41.  What is the radius of a circle if its circumference is 156 in? (Use π= 3.14)</p>
+                <label><input type="radio" name="q41" value="a"> 46.2 in</label><br>
+                <label><input type="radio" name="q41" value="b"> 23.1 in</label><br>
+                <label><input type="radio" name="q41" value="c"> 49.7 in</label><br>
+                <label><input type="radio" name="q41" value="d"> 24.8 in</label>
+            </div><br>
+
+            <div class="question">
+                <p>42. Read the US Vernier caliper below. </p> 
+                <p><img src='images/q42.jpg' width='400' height='175'></p>
+                <label><input type="radio" name="q42" value="a"> 4.025 in</label><br>
+                <label><input type="radio" name="q42" value="b"> 4.00 in</label><br>
+                <label><input type="radio" name="q42" value="c"> 3.731 in</label><br>
+                <label><input type="radio" name="q42" value="d"> 3.706 in</label>
+            </div><br>
+
+            <div class="question">
+                <p>43. Read the US Vernier micrometer below. </p> 
+                <p><img src='images/q43.jpg' width='400' height='175'></p>
+                <label><input type="radio" name="q43" value="a"> 0.432 in</label><br>
+                <label><input type="radio" name="q43" value="b"> 4.432 in</label><br>
+                <label><input type="radio" name="q43" value="c"> 0.407 in</label><br>
+                <label><input type="radio" name="q43" value="d"> 4.207 in</label>
+            </div><br>
+
+            <div class="question">
+                <p>44. Convert the problem to a percent equation:</p> 
+                <p style='margin-left:5em; font-style:italic;'>"How much is 20% of 3,500?" </p> 
+                <label><input type="radio" name="q44" value="a"> \(B=20\%\div 3,500\)</label><br>
+                <label><input type="radio" name="q44" value="b"> \(P=20\%\times 3,500\)</label><br>
+                <label><input type="radio" name="q44" value="c"> \(B=20\%\div 3,500\)</label><br>
+                <label><input type="radio" name="q44" value="d"> \(P=20\%\times 3,500\)</label>
+            </div><br>
+
+            <div class="question">
+                <p>45. An object is 9 ft from the fulcrum and balances a second object weighing 325 lb. If the second object is placed 6.5 ft from the fulcrum, how much does the first object weigh? Express your answer to the nearest lb. </p> 
+                <p><img src='images/q45.png' width='375' height='175'></p>
+                <label><input type="radio" name="q45" value="a"> 450 lb</label><br>
+                <label><input type="radio" name="q45" value="b"> 235 lb</label><br>
+                <label><input type="radio" name="q45" value="c"> 0.18 lb</label><br>
+                <label><input type="radio" name="q45" value="d"> 6 lb</label>
+            </div><br>
+
+            <div class="question">
+                <p>46. Seven fire extinguishers and five fire hoses cost SAR 2325 while four fire extinguishers and nine fire hoses cost SAR 1605. Find the cost of each fire hose.</p> 
+                <label><input type="radio" name="q46" value="a"> SAR 45</label><br>
+                <label><input type="radio" name="q46" value="b"> SAR 300</label><br>
+                <label><input type="radio" name="q46" value="c"> SAR 570</label><br>
+                <label><input type="radio" name="q46" value="d"> SAR 230</label>
+            </div><br>
+
+            <div class="question">
+                <p>47. The angle of depression from the top of the lighthouse to a navy patrol boat is \(32^o\).The height of the lighthouse is 178 ft. What is the distance of the navy patrol boat from the base of the lighthouse? Apply the rules of measurement.</p> 
+                <label><input type="radio" name="q47" value="a"> 112 ft</label><br>
+                <label><input type="radio" name="q47" value="b"> 284 ft</label><br>
+                <label><input type="radio" name="q47" value="c"> 111 ft</label><br>
+                <label><input type="radio" name="q47" value="d"> 285 ft</label>
+            </div><br>
+
+            <div class="question">
+                <p>48. The capacitance of three capacitors in a parallel circuit are 12 F, 15 F, and 18 F. If a fourth capacitor is added to the circuit, the average capacitance is 17 F for all four capacitors. Calculate the capacitance of the added capacitor. (Farad, denoted by F, is the unit of capacitance.)</p> 
+                <label><input type="radio" name="q48" value="a"> 16 F</label><br>
+                <label><input type="radio" name="q48" value="b"> 15 F</label><br>
+                <label><input type="radio" name="q48" value="c"> 23 F</label><br>
+                <label><input type="radio" name="q48" value="d"> 35 F</label>
+            </div><br>
+
+            <div class="question">
+                <p>49. What is the total cost, to the nearest SAR, of fencing a circular pond with diameter 1.300 m if the fencing cost is SAR 750 per meter.Use π= 3.14. </p> 
+                <label><input type="radio" name="q49" value="a"> SAR 3062 </label><br>
+                <label><input type="radio" name="q49" value="b"> SAR 6123</label><br>
+                <label><input type="radio" name="q49" value="c"> SAR 3980</label><br>
+                <label><input type="radio" name="q49" value="d"> SAR 995</label>
+            </div><br>
+
+
+            <div class="question">
+                <p>50. The monthly budget for office supplies of an office was decreased from SAR60,000 to SAR 51,000. What is the percent of decrease in the budget? </p> 
+                <label><input type="radio" name="q50" value="a"> 10%</label><br>
+                <label><input type="radio" name="q50" value="b"> 15%</label><br>
+                <label><input type="radio" name="q50" value="c"> 11%</label><br>
+                <label><input type="radio" name="q50" value="d"> 16%</label>
+            </div><br>
+
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+    </div>
+
+    <div id="result" style="display: none;">
+        <h2>Final Score</h2>
+        <p id="score"></p>
+        <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <div id="close" style="display: none;">
+        <h3 style="text-indent: 20px;">The test has been closed due to minimized page, another opened tab or user submitted the test. If user submitted the test, the score should be shown.</h3>
+        <p id="score"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
