@@ -26,7 +26,7 @@ function startQuiz() {
 
 
 function startTimer() {
-    const endTime = Date.now() + 110 * 60 * 1000; // after + is the number of minutes of the quiz
+    const endTime = Date.now() + 75 * 60 * 1000; // after + is the number of minutes of the quiz
     countdownTimer = setInterval(() => {
         const now = Date.now();
         const timeLeft = endTime - now;
